@@ -50,8 +50,9 @@ public class Loader {
                 String nimi = jsonObject.get("nimi").toString();
                 String kirjailija = jsonObject.get("kirjailija").toString();
                 int sivut = Integer.parseInt(jsonObject.get("sivut").toString());
+                int nykyinenSivu = Integer.parseInt(jsonObject.get("nykyinen").toString());
 
-                KIRJAT.add(new Kirja(nimi, NIMET.get(i), kirjailija, sivut));
+                Kirjat.KIRJAT.add(new Kirja(nimi, NIMET.get(i), kirjailija, sivut, nykyinenSivu));
             } catch (Exception e) {
                 e.printStackTrace();
             }
