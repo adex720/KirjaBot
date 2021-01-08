@@ -10,9 +10,11 @@ public class CommandExecutor extends ListenerAdapter {
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
         if(event.getMessage().getAuthor().isBot()) return;
-        
+
         for(Command command : Kirjabot.COMMANDS){
-            if(command.getUsage().startsWith(event.getMessage().getContentDisplay())){
+            String viesti = event.getMessage().getContentRaw();
+            String komento = command.getCommand();
+            if(viesti.startsWith(komento)){
                 command.execute(event);
             }
         }
