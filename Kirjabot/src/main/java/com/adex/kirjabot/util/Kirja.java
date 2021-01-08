@@ -6,7 +6,7 @@ public class Kirja {
     private final String lukija;
     private final String kirjailija;
     private final int sivut;
-    private final int nykyinenSivu;
+    private int nykyinenSivu;
 
     public Kirja(String nimi, String lukija, String kirjailija, int sivut, int nykyinenSivu) {
         this.nimi = nimi;
@@ -32,12 +32,16 @@ public class Kirja {
         return nykyinenSivu;
     }
 
+    public void setNykyinenSivu(int nykyinenSivu) {
+        this.nykyinenSivu = nykyinenSivu;
+    }
+
     public String getKirjailija() {
         return kirjailija;
     }
 
     @Override
     public String toString() {
-        return lukija + ": " + nimi + ", " + kirjailija + "; sivulla " + nykyinenSivu + "/" + sivu;
+        return lukija + ": " + nimi + ", " + kirjailija + "; sivulla " + nykyinenSivu + "/" + sivut;
     }
 }
