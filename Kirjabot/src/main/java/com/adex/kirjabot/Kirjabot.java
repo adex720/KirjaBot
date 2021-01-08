@@ -31,6 +31,7 @@ public class Kirjabot {
 
 
         new ListaaKirjat();
+        new Lue();
     }
 
 }
