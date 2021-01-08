@@ -6,12 +6,14 @@ public class Kirja {
     private final String lukija;
     private final String kirjailija;
     private final int sivut;
+    private final int nykyinenSivu;
 
-    public Kirja(String nimi, String lukija, String kirjailija, int sivut) {
+    public Kirja(String nimi, String lukija, String kirjailija, int sivut, int nykyinenSivu) {
         this.nimi = nimi;
         this.lukija = lukija;
         this.kirjailija = kirjailija;
         this.sivut = sivut;
+        this.nykyinenSivu = nykyinenSivu;
     }
 
     public String getnimi() {
@@ -26,12 +28,16 @@ public class Kirja {
         return sivut;
     }
 
+    public int getNykyinenSivu() {
+        return nykyinenSivu;
+    }
+
     public String getKirjailija() {
         return kirjailija;
     }
 
     @Override
     public String toString() {
-        return lukija + ": " + nimi + ", " + kirjailija + "; " + sivut + " sivua";
+        return lukija + ": " + nimi + ", " + kirjailija + "; sivulla " + nykyinenSivu + "/" + sivu;
     }
 }
